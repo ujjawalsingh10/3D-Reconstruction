@@ -26,6 +26,8 @@ depthM = sub.get_depth(dispM, K1p, K2p, R1p, R2p, t1p, t2p)
 # 3. Display disparity and depth maps
 
 dispI = dispM * (I1>40)
+# print(dispI.shape)
+# print(dispI)
 depthI = depthM * (I1>40)
 
 fig, (ax1, ax2) = plt.subplots(1, 2)
