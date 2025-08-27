@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 from submission import eight_point, epipolar_correspondences, essential_matrix, triangulate
 
 # 1. Load the two temple images and the points from data/some_corresp.npz
-img1 = io.imread('../data/im1.png')
-img2 = io.imread('../data/im2.png')
-data = np.load('../data/some_corresp.npz')
+img1 = io.imread('data/im1.png')
+img2 = io.imread('data/im2.png')
+data = np.load('data/some_corresp.npz')
 
 # 2. Run eight_point to compute F
 M = np.max([img1.shape[0], img1.shape[1]])
@@ -21,7 +21,7 @@ F = eight_point(pts1, pts2, M)
 
 
 # 3. Load points in image 1 from data/temple_coords.npz
-pts1 = np.load('../data/temple_coords.npz')['pts1']
+pts1 = np.load('data/temple_coords.npz')['pts1']
 # 4. Run epipolar_correspondences to get points in image 2
 pts2 = epipolar_correspondences(img1, img2, F, pts1)
 # hlp.epipolarMatchGUI(img1, img2, F)
@@ -30,7 +30,7 @@ pts2 = epipolar_correspondences(img1, img2, F, pts1)
 K1_extrinsic = np.hstack((np.eye(3, 3), np.zeros((3,1))))
 ## P = K[I|0]
 #### Load camera intrinsic parameters 
-K1_intrinsic, K2_intrinsic = np.load('../data/intrinsics.npz')['K1'], np.load('../data/intrinsics.npz')['K2']
+K1_intrinsic, K2_intrinsic = np.load('data/intrinsics.npz')['K1'], np.load('data/intrinsics.npz')['K2']
 P1 = K1_intrinsic @ K1_extrinsic
 
 # 6. Use camera2 to get 4 camera projection matrices P2
@@ -78,5 +78,5 @@ ax.scatter(best_pts3d[:, 0], best_pts3d[:, 1], best_pts3d[:, 2], s=5)
 plt.show()
 
 # 10. Save the computed extrinsic parameters (R1,R2,t1,t2) to data/extrinsics.npz
-np.savez('../data/extrinsics.npz', R1 = np.eye(3), t1 = np.zeros(3), 
+np.savez('data/extrinsics.npz', R1 = np.eye(3), t1 = np.zeros(3), 
          R2 = best_M2[:, :3], t2 = best_M2[:, 3 ])

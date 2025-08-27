@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 
 # 1. Load the images and the parameters
 
-I1 = cv.cvtColor(cv.imread('../data/im1.png'), cv.COLOR_BGR2GRAY).astype(np.float32)
-I2 = cv.cvtColor(cv.imread('../data/im2.png'), cv.COLOR_BGR2GRAY).astype(np.float32)
+I1 = cv.cvtColor(cv.imread('data/im1.png'), cv.COLOR_BGR2GRAY).astype(np.float32)
+I2 = cv.cvtColor(cv.imread('data/im2.png'), cv.COLOR_BGR2GRAY).astype(np.float32)
 
-rectify = np.load('../data/rectify.npz')
+rectify = np.load('data/rectify.npz')
 M1, M2 = rectify['M1'], rectify['M2']
 K1p, K2p = rectify['K1p'], rectify['K2p']
 R1p, R2p = rectify['R1p'], rectify['R2p']
