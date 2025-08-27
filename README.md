@@ -5,7 +5,7 @@ The work is divided into two major parts:
 - **Sparse Reconstruction** → Fundamental matrix, epipolar correspondences, triangulation  
 - **Dense Reconstruction** → Rectification, disparity map, depth map  
 
-All results are stored in the [`output/`](./output) folder.  
+All results are stored in the [`outputss/`](./outputss) folder.  
 
 ---
 
@@ -14,22 +14,22 @@ All results are stored in the [`output/`](./output) folder.
 ### 🔹 2.1 Eight Point Algorithm 
 **Task:** Implement the normalized eight-point algorithm to compute the Fundamental Matrix `F`.  
 
-**My Output:**  
+**My outputs:**  
 - Estimated Fundamental Matrix `F`  
 - Visualization of epipolar lines:  
 
-<img src="./output/2_1_eight_point_epipolarF" width="500">  
+<img src="./outputs/2_1_eight_point_epipolarF.png" width="500">  
 
 ---
 
 ### 🔹 2.2 Epipolar Correspondences 
 **Task:** Find corresponding points in stereo images using the epipolar constraint.  
 
-**My Output:**  
+**My outputs:**  
 - Similarity metric used: **SSD (Sum of Squared Differences)**  
 - Epipolar match visualization:  
 
-<img src="./output/2_2_epipolar_corr.png" width="500">  
+<img src="./outputs/2_2_epipolar_corr.png" width="500">  
 
 ---
 
@@ -40,7 +40,7 @@ All results are stored in the [`output/`](./output) folder.
 ### 🔹 2.4 Triangulation 
 **Task:** Reconstruct 3D points from correspondences using projection matrices `P1`, `P2`.  
 
-**My Output:**  
+**My outputs:**  
 - Correct `P2` chosen using positive depth constraint.  
 - Reprojection error < **1 pixel**.  
 
@@ -51,8 +51,8 @@ Script: `python/test_temple_coords.py`
 - Saves extrinsic parameters → `data/extrinsics.npz`  
 - 3D Reconstruction (2 views):  
 
-<img src="./output/2_5_temple_coords_recon.png" width="300">  
-<img src="./output/2_5_temple_coords_recon_2.png" width="300">   
+<img src="./outputs/2_5_temple_coords_recon.png" width="300">  
+<img src="./outputs/2_5_temple_coords_recon_2.png" width="300">   
 
 ---
 
@@ -61,9 +61,9 @@ Script: `python/test_temple_coords.py`
 ### 🔹 3.1 Image Rectification 
 **Task:** Compute rectification matrices so that epipolar lines are horizontal.  
 
-**My Output:**  
+**My outputs:**  
 
-<img src="./output/3_1_test_rectify" width="500">  
+<img src="./outputs/3_1_test_rectify.png" width="500">  
 
 ---
 
@@ -74,9 +74,9 @@ Script: `python/test_temple_coords.py`
 ### 🔹 3.3 Depth Map  
 **Task:** Generate depth map from disparity using baseline and focal length.  
 
-**My Output:**  
+**My outputs:**  
 
-<img src="./output/3_2_test_depth" width="500">  
+<img src="./outputs/3_2_test_depth.png" width="500">  
 
 ---
 
