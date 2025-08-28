@@ -81,7 +81,7 @@ Script: `python/test_temple_coords.py`
 ---
 
 
-** ## 📌 Notes **
+ **📌 Notes** 
 
 Epipolar matching works best on strong corners; may fail on textureless regions.
 
@@ -93,12 +93,12 @@ Dense disparity and depth depend on chosen window size and disparity range.
 
 ```bash
 # Run sparse reconstruction pipeline
-python python/test_temple_coords.py
+python test_temple_coords.py
 
 # Run rectification
-python python/test_rectify.py
+python test_rectify.py
 
 # Run dense reconstruction (disparity & depth)
-python python/test_depth.py
+python test_depth.py
 
 
